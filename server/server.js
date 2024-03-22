@@ -1,10 +1,12 @@
 const express = require("express");
 const userRecords = require("./userdb");
+const bodyParser = require("body-parser");
 const router = express();
 const cors = require("cors");
 
 router.use(cors());
 router.use(express.json());
+router.use(bodyParser.json())
 
 //Get user records 
 router.get(`/userdb`,(req,res)=>{
